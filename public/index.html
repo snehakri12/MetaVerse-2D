@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ADMeet: 2D Video Room</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="arena">
+    <!-- Office Layout -->
+    <div class="room meeting-room">Meeting Room</div>
+    <div class="room private-room">Private Room</div>
+<div class="room conference-room">Conference Room</div>
+<div class="entrance entrance-meeting"></div>
+<div class="entrance entrance-private"></div>
+<div class="entrance entrance-conference"></div>
+
+  </div>
+
+  <!-- <div id="mobile-controls" style="display: none;">
+  <div class="dpad-row">
+    <button id="upBtn">⬆️</button>
+  </div>
+  <div class="dpad-row">
+    <button id="leftBtn">⬅️</button>
+    <button id="downBtn">⬇️</button>
+    <button id="rightBtn">➡️</button>
+  </div>
+</div> -->
+
+
+
+  <div id="controls">
+    <button id="toggleAudio">🔇 Mute</button>
+    <button id="toggleVideo">📹 Stop Video</button>
+    <button id="startShare">📺 Share Screen</button>
+    <button id="stopShare" style="display:none;">❌ Stop Sharing</button>
+  </div>
+
+  <video id="localVideo" autoplay muted></video>
+  <div id="remoteVideos"></div>
+  <div id="screenShareContainer"></div>
+  
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+<!-- issues: screenshare size increase. entry through entrance. mobile support-->
