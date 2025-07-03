@@ -1,0 +1,193 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #d3cce3, #e9e4f0);
+  color: #333;
+}
+
+#arena {
+  position: relative;
+  width: 900px;
+  height: 600px;
+  margin: 40px auto;
+  background-color: #f5f5f5; /* same as body */
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(0,0,0,0.05) 0px,
+      rgba(0,0,0,0.05) 1px,
+      transparent 1px,
+      transparent 20px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(0,0,0,0.05) 0px,
+      rgba(0,0,0,0.05) 1px,
+      transparent 1px,
+      transparent 20px
+    );
+  background-size: 20px 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+#mobile-controls {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999;
+}
+
+
+
+.dpad-row {
+  display: flex;
+  justify-content: center;
+  margin: 5px 0;
+}
+
+#mobile-controls button {
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  border-radius: 10px;
+  margin: 0 5px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+}
+
+
+/* Rooms */
+.room {
+  position: absolute;
+  border: 2px dashed #aaa;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  color: #555;
+  padding-top: 4px;
+}
+.meeting-room {
+  top: 20px;
+  left: 20px;
+  width: 300px;
+  height: 200px;
+  background-color: #e0f7fa;
+}
+.private-room {
+  top: 20px;
+  right: 20px;
+  width: 200px;
+  height: 150px;
+  background-color: #fce4ec;
+}
+.conference-room {
+  bottom: 20px;
+  left: 250px;
+  width: 400px;
+  height: 200px;
+  background-color: #f1f8e9;
+}
+
+.entrance {
+  position: absolute;
+  width: 60px;
+  height: 10px;
+  background-color: #555;
+  border-radius: 4px;
+}
+
+.entrance-meeting {
+  top: 222px;
+  left: 140px;
+}
+
+.entrance-private {
+  top: 170px;
+  right: 120px;
+}
+
+.entrance-conference {
+  bottom: 220px;
+  left: 270px;
+}
+
+
+#controls {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(255,255,255,0.9);
+  padding: 5px 10px;
+  border-radius: 8px;
+  z-index: 1000;
+}
+#controls button {
+  font-size: 16px;
+  margin-right: 8px;
+  padding: 6px 12px;
+}
+
+.avatar {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background: url('avatar.svg') no-repeat center;
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s ease;
+}
+.avatar:hover {
+  transform: scale(1.1);
+}
+.myAvatar {
+  border: 2px solid red;
+}
+
+#localVideo {
+  position: fixed;
+  bottom: 55px;
+  left: 30px;
+  width: 200px;
+  height: 160px;
+  border: 2px solid #999;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background: #000;
+  transform: scaleX(-1); /* ✅ This removes the mirror effect */
+}
+
+
+#remoteVideos {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transform: scaleX(-1);
+}
+#remoteVideos video, #screenShareContainer video {
+  width: 220px;
+  height: 150px;
+  border-radius: 8px;
+  background: #000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+#screenShareContainer {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+#screenShareContainer video {
+  width: 1080px; /* 600 * 1.8 */
+  height: 630px; /* 350 * 1.8 */
+  border: 3px solid #f44336;
+}
